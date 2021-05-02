@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc} 
+\usepackage{amssymb} 
+\usepackage{amsmath} 
+\usepackage{amsthm} 
+\usepackage{enumitem} 
+\usepackage{anysize} 
+\usepackage{xcolor}   
+\usepackage{commath} 
+\usepackage{mathtools} 
+\usepackage{color} 
+\usepackage{listings} 
+\usepackage{setspace} 
+\usepackage[portuguese]{babel} 
+\usepackage{hyperref} 
+ \hypersetup{
+     colorlinks=true,
+     linkcolor=blue,
+     filecolor=blue,
+     citecolor = black,      
+     urlcolor=cyan,
+} 
+
+\makeatletter
+\newcommand{\setword}[2]{%
+  \phantomsection
+  #1\def\@currentlabel{\unexpanded{#1}}\label{#2}%
+}
+\makeatother
+
+\newtheorem{proposition}{Proposição} 
+
+\theoremstyle{definition} 
+\newtheorem{definition}{Definição} 

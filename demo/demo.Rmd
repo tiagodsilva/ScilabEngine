@@ -1,7 +1,13 @@
 ---
 title: "Demo" 
 # author: "you" 
-output: html_document
+output: 
+  pdf_document: 
+    # toc: yes 
+    number_sections: yes 
+    includes: 
+      in_header: includes.sty 
+  fontsize: 12pt 
 ---
 
 ```{r, eval = TRUE, include = FALSE} 
