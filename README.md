@@ -18,7 +18,7 @@ In addition, two options are available: one allows to load Scilab files, so one 
 
 + `scilab_file`. Load a scilab file; it uses `exec(filename, -1)` for this. 
 
-+ `scilab_var`. Define variables; you can use semicolons to separe them. For instance, `{r, engine = "scilab", scilab_var = "A = [1 2 3 4]; b = [1 2 3 4 5]';"}` makes variables `A` and `b` available. 
++ `scilab_var`. Define variables; you can use semicolons to separate them. For instance, `{r, engine = "scilab", scilab_var = "A = [1 2 3 4]; b = [1 2 3 4 5]';"}` makes variables `A` and `b` available. 
 
 
 This is it. Check the [demo](https://github.com/tiagodsilva/ScilabEngine/tree/main/demo) for a more concrete example :stuck_out_tongue_winking_eye:. 
