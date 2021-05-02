@@ -2,7 +2,7 @@
 
 This is a simple example of how to execute Scilab code in RMarkdown. It will be possibly useful for anyone who needs to write reports or homeworks with this language. By the way, I used it in Ubuntu 20.04; I don't know whether it works in another OS :blush:. 
 
-In order to use it, one needs to install Scilab in its machine. This can be done with 
+In order to use it, one needs to install Scilab in its machine; particularly, Scilab command line interface, `scilab-cli`, is required. This can be done with 
 
 ``` 
 sudo apt install scilab 
