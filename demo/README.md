@@ -30,7 +30,7 @@ toc()
 
     ##  ans  =
     ## 
-    ##    12.783267
+    ##    12.36345
 
 Now, let’s say we define a matrix in some chunk:
 
