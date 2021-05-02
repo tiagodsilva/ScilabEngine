@@ -1,0 +1,95 @@
+---
+title: "Demo" 
+# author: "you" 
+output: html_document
+---
+
+```{r, eval = TRUE, include = FALSE} 
+library(stringr) 
+eng_scilab <- function(options) { 
+code <- str_c(options$code, collapse = "\n")  
+if (options$eval) { 
+flags = "--timeout 4s -ns -e" 
+if(!is.null(options$timeout)) flags = paste("--timeout", options$timeout, "-ns -e") 
+if(typeof(options$scilab_file) == "character") {
+  exec_file <- sprintf("exec('%s', -1)", options$scilab_file) 
+  code <- paste(exec_file, "\n", code)   
+} 
+
+if(!is.null(options$scilab_var)) {
+  code <- paste(options$scilab_var, code) 
+} 
+# print(code) 
+code <- paste(code, "\nexit") 
+code <- paste("try;", code, ";catch;", 
+              "disp('some exception was raised! :(') 
+              disp('this is the exception:') 
+              disp(lasterror())  
+              exit; end") 
+cmd <- sprintf('scilab-cli %s %s',
+             flags, shQuote(code, type="sh")) 
+
+# options$comment = NA 
+out <- system(cmd, intern = TRUE) 
+# print(out) 
+}else{out <- ""}
+
+knitr::engine_output(options, options$code, out)
+
+}
+
+knitr::knit_engines$set(scilab=eng_scilab) 
+``` 
+
+This is a simple demo for using Scilab engine in RMarkdown. Let's start, just to be sure that everythin is working, with matrix multiplication. 
+
+```{r, engine = "scilab"} 
+A = [1 2 3; 4 5 6; 7 8 9]; 
+b = [1 5 25]'; 
+A * b 
+``` 
+
+Sometimes, we need to multiply two really big matrices; for this, we can update the timeout. 
+
+```{r, engine = "scilab", timeout = "15s"} 
+n = 2500; 
+A = rand(n, n); 
+B = rand(n, n); 
+tic() 
+A * B; 
+toc() 
+``` 
+
+
+Now, let's say we define a matrix in some chunk: 
+
+```{r, engine = "scilab"} 
+A = [1 2 3; 4 5 6; 7 8 9]; 
+spec(A) 
+``` 
+
+
+And we want to reuse it in another chunk. For this, we can use `scilab_var` option. 
+
+```{r, engine = "scilab", scilab_var = "A = [1 2 3; 4 5 6; 7 8 9];"}  
+max(abs(spec(A))) // dominant eigenvalue of A 
+``` 
+
+
+
+However, one possibly needs to reuse functions and variables between chunks; writing them in one line in `scilab_var` is maybe inconvenient. For this, the option `scilab_file` is available; one can load a file with whatever they want. The next chunk, for instance, compute the Fibonacci numbers with the Fibonacci function, written in [Fibonacci.sci](https://github.com/tiagodsilva/ScilabEngine/blob/main/Fibonacci.sci) file. 
+
+```{r, engine = "scilab", scilab_file = "Fibonacci.sci"}  
+fibo = []; 
+for i = 1:15 do fibo = [fibo Fibonacci(i)]; end 
+fibo 
+``` 
+
+That is it. It is also possibly use normally all amazing functionalities of RMarkdown (for example, LaTeX with tinytex, HTML and GitHub markdown)! 
+
+
+
+
+
+
+
