@@ -8,7 +8,7 @@ In order to use it, one needs to install Scilab in its machine. This can be done
 sudo apt install scilab 
 ``` 
 
-To make sure everything is working, the command `scilab-cli -e "disp('Hello World')";exit"` should print `"Hello World"` on the console. 
+To make sure everything is working, the command `scilab-cli -e "disp('Hello World');exit"` should print `"Hello World"` on the console. 
 
 With this in hand, insert the code in [engine.R](https://github.com/tiagodsilva/ScilabEngine/blob/main/engine.R) at the start of your Rmd document; for instance, check [demo.Rmd](https://github.com/tiagodsilva/ScilabEngine/blob/main/demo/demo.Rmd) file. This will add another engine to `knitr`; in general, it will read the code written in the chunk, execute it with `scilab-cli --timeout 4s -ns -e "code"` and print whatever appears in the console. It is, however, important to notice that we inserted a timeout to the execution; this is necessary because we can't interrupt execution from RStudio without reseting it. This can be controlled with a `timeout` option; for example, `{r, engine = "scilab", timeout = "25s"}`. 
 
