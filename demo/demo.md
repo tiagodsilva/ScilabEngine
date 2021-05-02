@@ -30,7 +30,7 @@ toc()
 
     ##  ans  =
     ## 
-    ##    12.387908
+    ##    12.571557
 
 Now, let’s say we define a matrix in some chunk:
 
@@ -61,7 +61,7 @@ chunks; writing them in one line in `scilab_var` is maybe inconvenient.
 For this, the option `scilab_file` is available; one can load a file
 with whatever they want. The next chunk, for instance, compute the
 Fibonacci numbers with the Fibonacci function, written in
-[Fibonacci.sci](https://github.com/tiagodsilva/ScilabEngine/blob/main/Fibonacci.sci)
+[Fibonacci.sci](https://github.com/tiagodsilva/ScilabEngine/blob/main/demo/Fibonacci.sci)
 file.
 
 ``` scilab

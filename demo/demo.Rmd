@@ -77,7 +77,7 @@ max(abs(spec(A))) // dominant eigenvalue of A
 
 
 
-However, one possibly needs to reuse functions and variables between chunks; writing them in one line in `scilab_var` is maybe inconvenient. For this, the option `scilab_file` is available; one can load a file with whatever they want. The next chunk, for instance, compute the Fibonacci numbers with the Fibonacci function, written in [Fibonacci.sci](https://github.com/tiagodsilva/ScilabEngine/blob/main/Fibonacci.sci) file. 
+However, one possibly needs to reuse functions and variables between chunks; writing them in one line in `scilab_var` is maybe inconvenient. For this, the option `scilab_file` is available; one can load a file with whatever they want. The next chunk, for instance, compute the Fibonacci numbers with the Fibonacci function, written in [Fibonacci.sci](https://github.com/tiagodsilva/ScilabEngine/blob/main/demo/Fibonacci.sci) file. 
 
 ```{r, engine = "scilab", scilab_file = "Fibonacci.sci"}  
 fibo = []; 
