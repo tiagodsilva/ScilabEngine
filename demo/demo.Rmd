@@ -85,7 +85,7 @@ for i = 1:15 do fibo = [fibo Fibonacci(i)]; end
 fibo 
 ``` 
 
-That is it. It is also possibly use normally all amazing functionalities of RMarkdown (for example, LaTeX with tinytex, HTML and GitHub markdown)! 
+That is it. It is also possibly use normally every functionality of RMarkdown (for example, LaTeX with tinytex, HTML and GitHub markdown)! 
 
 
 

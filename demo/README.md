@@ -28,10 +28,6 @@ A * B;
 toc() 
 ```
 
-    ##  ans  =
-    ## 
-    ##    12.36345
-
 Now, let’s say we define a matrix in some chunk:
 
 ``` scilab
@@ -80,6 +76,5 @@ fibo
     ## 
     ##    377.   610.
 
-That is it. It is also possibly use normally all amazing functionalities
-of RMarkdown (for example, LaTeX with tinytex, HTML and GitHub
-markdown)!
+That is it. It is also possibly use normally every functionality of
+RMarkdown (for example, LaTeX with tinytex, HTML and GitHub markdown)!
