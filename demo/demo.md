@@ -30,7 +30,7 @@ toc()
 
     ##  ans  =
     ## 
-    ##    12.571557
+    ##    12.783267
 
 Now, let’s say we define a matrix in some chunk:
 
@@ -57,10 +57,10 @@ max(abs(spec(A))) // dominant eigenvalue of A
     ##    16.116844
 
 However, one possibly needs to reuse functions and variables between
-chunks; writing them in one line in `scilab_var` is maybe inconvenient.
-For this, the option `scilab_file` is available; one can load a file
-with whatever they want. The next chunk, for instance, compute the
-Fibonacci numbers with the Fibonacci function, written in
+chunks; writing them in one line in `scilab_var` could be really
+inconvenient. For this, the option `scilab_file` is available; one can
+load a file with whatever they want. The next chunk, for instance,
+compute the Fibonacci numbers with the Fibonacci function, written in
 [Fibonacci.sci](https://github.com/tiagodsilva/ScilabEngine/blob/main/demo/Fibonacci.sci)
 file.
 

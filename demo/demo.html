@@ -619,7 +619,7 @@ body {
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>toc() </span></code></pre></div>
 <pre><code>##  ans  =
 ## 
-##    12.571557</code></pre>
+##    12.783267</code></pre>
 <p>Now, let’s say we define a matrix in some chunk:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode scilab"><code class="sourceCode sci"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>A = [<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>; <span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span>; <span class="dv">7</span> <span class="dv">8</span> <span class="dv">9</span>]; </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">spec</span>(A) </span></code></pre></div>
@@ -633,7 +633,7 @@ body {
 <pre><code>##  ans  =
 ## 
 ##    16.116844</code></pre>
-<p>However, one possibly needs to reuse functions and variables between chunks; writing them in one line in <code>scilab_var</code> is maybe inconvenient. For this, the option <code>scilab_file</code> is available; one can load a file with whatever they want. The next chunk, for instance, compute the Fibonacci numbers with the Fibonacci function, written in <a href="https://github.com/tiagodsilva/ScilabEngine/blob/main/demo/Fibonacci.sci">Fibonacci.sci</a> file.</p>
+<p>However, one possibly needs to reuse functions and variables between chunks; writing them in one line in <code>scilab_var</code> could be really inconvenient. For this, the option <code>scilab_file</code> is available; one can load a file with whatever they want. The next chunk, for instance, compute the Fibonacci numbers with the Fibonacci function, written in <a href="https://github.com/tiagodsilva/ScilabEngine/blob/main/demo/Fibonacci.sci">Fibonacci.sci</a> file.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode scilab"><code class="sourceCode sci"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fibo = []; </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>for i = <span class="dv">1</span>:<span class="dv">15</span> do fibo = [fibo Fibonacci(i)]; end </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>fibo </span></code></pre></div>
